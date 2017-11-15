@@ -1,9 +1,9 @@
 ---
-title: "About"
+title: "About this dataset"
 ---
 
-### About this site
+This data was pulled from the NOAA (National Oceanic and Atmospheric Association) National Climatic Data Center, http://doi.org/10.7289/V5D21VHZ, on August 15, 2017. 
 
-Sometimes you need to say a bit about the site -- how it was made, where it's hosted, where the source code can be found. 
+Full data can be downloaded from the website above, however for this analysis we only observed data from stations in New York State from the beginning 1980 to the end of 2010. There are five measures that each of these stations can take, prcp, snow, snwd, tmax and tmin. Prcp is the variable for total precipitation measured for each day in tenths of millimeters. Snow and snwd are the measurements of snowfall and snowdepth respectivley, both recorded in millimeters. Tmax and tmin are the maximum and minimum temperatures recorded for each day, noted in the scale of Celsius (tenths). For each of these measurements there is also a station ID and a date stamp. 
 
-If this is for a project or analysis, I recommend giving some details about the R package versions that you used to create the content.
+This information is collected from over 100,000 stations in 180 countries and territories where half of the stations report precipitaiton levels only. Every day the data is checked and maintained to ensure that values continue to be recorded.
