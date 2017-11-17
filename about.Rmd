@@ -2,7 +2,7 @@
 title: "About this dataset"
 ---
 
-<img src="images/snow_map.jpg" style="width:75%">
+<img src="images/snow_map.jpg" style="width:45%">
 
 The original dataset was pulled from the NOAA (National Oceanic and Atmospheric Association) National Climatic Data Center, http://doi.org/10.7289/V5D21VHZ, on August 15, 2017. 
 
