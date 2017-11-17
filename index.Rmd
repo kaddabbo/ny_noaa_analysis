@@ -2,3 +2,6 @@
 title: "NY NOAA Analysis"
 ---
 
+The following analysis was performed on a collection of data from New York State weather stations for years 2000-2010. To view the code run, please visit the collaborator's Github accounts included in the top right.
+
+Included in this analysis was a dashboard with applicable plots as well as a shiny interface for observers to interact with the data and see the changes in measurements across the years in NY.
