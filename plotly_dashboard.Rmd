@@ -1,0 +1,73 @@
+---
+title: "Plotly Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, cachedChunk, cache = TRUE}
+library(flexdashboard)
+library(tidyverse)
+library(forcats)
+library(plotly)
+library(janitor)
+library(tidyr)
+library(dplyr)
+library(lubridate)
+
+ny_noaa = read_csv("../data/nynoaadat.zip") %>%
+  clean_names %>%
+  separate(date, into = c("year", "month","day"), sep = "-") %>%
+  filter(year >= 2000) %>%
+  na.omit() %>%
+  mutate(tmax = as.numeric(tmax), tmin = as.numeric(tmin))
+  
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Figure 1: Annual Precipitation Trends
+
+```{r, cachedChunk, cache = TRUE}
+ny_noaa %>%
+  select("year", "month","prcp") %>%
+  na.omit() %>%
+  mutate(month = as.numeric(month),
+         prcp = as.numeric(prcp)) %>%
+  group_by(year, month) %>%
+  summarize(mean_prcp = mean(prcp)) %>%
+  plot_ly(y = ~mean_prcp, x = ~month, color = ~year, type = "scatter", mode = "lines")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Figure 2: Stations with the Most Accumulation of Snowfall in 2000
+
+```{r, cache = TRUE}
+ny_noaa %>%
+  filter(year == 2000) %>%
+  select("id", "snow") %>%
+  group_by(id) %>%
+  summarize(snow = sum(snow)) %>%
+  mutate(snow = as.numeric(snow),
+         id = fct_reorder(id, snow)) %>%
+  arrange(desc(snow)) %>%
+  top_n(15) %>%
+  plot_ly(x = ~id, y = ~snow, type = "bar")
+```
+
+
+### Figure 3: Average Maximum Temperatures for 2000-2010
+
+```{r, cache = TRUE}
+ny_noaa %>%
+  select("year", "month", "tmax") %>%
+  na.omit() %>%
+  mutate(tmax = as.numeric(tmax)) %>%
+  group_by(year, month) %>%
+  summarize(mean_tmax = mean(tmax)) %>%
+  plot_ly(y = ~mean_tmax, color = ~month, type = "box")
+```

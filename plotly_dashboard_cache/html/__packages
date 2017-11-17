@@ -1,0 +1,14 @@
+base
+flexdashboard
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+forcats
+plotly
+janitor
+lubridate
+bindrcpp
