@@ -21,9 +21,13 @@ ny_noaa = read_csv("../data/nynoaadat.zip") %>%
   separate(date, into = c("year", "month","day"), sep = "-") %>%
   filter(year >= 2000) %>%
   na.omit() %>%
+<<<<<<< HEAD
   mutate(tmax = as.numeric(tmax), tmin = as.numeric(tmin),
          tmax = (tmax/10), tmin = (tmin/10))
   
+=======
+  mutate(tmax = as.numeric(tmax), tmin = as.numeric(tmin), tmin = (tmin/10), tmax = (tmax/10))
+>>>>>>> 437f8b49857d36cf0781d110e882cca42de7f663
 ```
 
 Column {data-width=650}
