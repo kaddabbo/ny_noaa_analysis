@@ -5,6 +5,8 @@ navbar:
   right:
     - text: "About"
       href: about.html
+    - text: "Plotly Dashboard"
+      href: p8105_hw6_problem1
     - icon: fa-github fa-lg
       href: <https://github.com/kaddabbo>
     - icon: fa-github fa-lg
