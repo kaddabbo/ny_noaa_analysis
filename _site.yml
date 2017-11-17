@@ -7,9 +7,9 @@ navbar:
       href: about.html
     - text: "Plotly Dashboard"
       href: plotly_dashboard.html
-    - icon: "KA Github"
+    - text: "KA Github"
       href: https://github.com/kaddabbo
-    - icon: "NP Github"
+    - text: "NP Github"
       href: https://github.com/np2547   
 output:
   html_document
